@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.48aa8434.css",
+    "main.js": "/portfolio/static/js/main.af7f0f3c.js",
+    "static/js/453.50ba56e4.chunk.js": "/portfolio/static/js/453.50ba56e4.chunk.js",
+    "static/media/IA.png": "/portfolio/static/media/IA.afb81de0eb0f8acf5d48.png",
+    "static/media/Stocky2.png": "/portfolio/static/media/Stocky2.b4f838cb8b0dd6e5b5b4.png",
+    "static/media/Medease1.png": "/portfolio/static/media/Medease1.1017b89b7561e480b058.png",
+    "static/media/Stocky1.png": "/portfolio/static/media/Stocky1.d6c29895f44ea3f82a79.png",
+    "static/media/Stocky.jpg": "/portfolio/static/media/Stocky.943516566717dcdad587.jpg",
+    "static/media/photo.jpg": "/portfolio/static/media/photo.53a02584356aba4bce9a.jpg",
+    "static/media/Go-no-go.jpg": "/portfolio/static/media/Go-no-go.1e8250655013f5c98e60.jpg",
+    "static/media/Medease2.png": "/portfolio/static/media/Medease2.38d4000ee7bf29da188b.png",
+    "static/media/PBI_dashboard.jpg": "/portfolio/static/media/PBI_dashboard.5ab22eb556036240b55a.jpg",
+    "static/media/Power_automate.avif": "/portfolio/static/media/Power_automate.559d5a8cf900d421c648.avif",
+    "static/media/secu.jpg": "/portfolio/static/media/secu.74cfd0aec46b29c60a97.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.48aa8434.css.map": "/portfolio/static/css/main.48aa8434.css.map",
+    "main.af7f0f3c.js.map": "/portfolio/static/js/main.af7f0f3c.js.map",
+    "453.50ba56e4.chunk.js.map": "/portfolio/static/js/453.50ba56e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48aa8434.css",
+    "static/js/main.af7f0f3c.js"
+  ]
+}
