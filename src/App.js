@@ -13,6 +13,21 @@ import Secu from './assets/images/secu.jpg';
 import PBI from './assets/images/PBI_dashboard.jpg';
 import Power from './assets/images/Power_automate.avif';
 import IA from './assets/images/IA.png';
+import DaxiumAss from './assets/images/DaxiumAss.png';
+import spie from './assets/images/spie.jpg';
+import Optim from './assets/images/Optim.png';
+import opencv from './assets/images/opencv.gif';
+import fraude1 from './assets/images/fraude1.jpg';
+import fraude2 from './assets/images/fraude2.png';
+import mono from './assets/images/mono.webp';
+
+
+
+
+
+
+
+
 
 
 // Composant pour les particules interactives
@@ -219,7 +234,7 @@ function App() {
               <motion.a
   whileHover={{ y: -3, scale: 1.03 }}
   whileTap={{ scale: 0.97 }}
-  href="/Bouha_Maaye.pdf" // Ajoutez votre CV
+  href="/MAAYE_CV.pdf" // Ajoutez votre CV
   download
   className="px-8 py-3 border border-blue-400/50 rounded-full font-medium flex items-center justify-center gap-2"
 >
@@ -254,7 +269,7 @@ function App() {
               >
 Titulaire d’un bac en mathématiques, d’une licence en mathématiques et informatique (parcours programmation), et d’un master en Data Science & IA, j’ai acquis une solide expertise technique.
 
-Après un stage en tant que data analyst chez Monoprix, j’ai effectué deux années d’alternance chez SPIE CityNetwork, en collaboration avec Microsoft France.
+Après un stage en tant que data analyst chez Monoprix, j’ai effectué deux années chez SPIE CityNetwork.
 J’y ai contribué à l’intégration des premières solutions IA du groupe, en développant des projets en Machine Learning, Deep Learning, analyse de données et automatisation.             </motion.p>
               
               <motion.p 
@@ -334,20 +349,20 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      Mon Alternance chez SPIE
+      Mon parcours chez SPIE
     </motion.h2>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       {[
         {
-          title: "IA pour les Appels d'Offres",
-          description: "Développement d’une IA analysant les documents d’appels d’offres et remplissant dynamiquement des tableaux Excel.",
-          tags: ["NLP", "Python", "Azure", "Excel Automation"],
+          title: "IA pour les Appels d'Offres (GO-NOGO",
+          description: "Développement d’une IA analysant les documents d’appels d’offres et remplissant dynamiquement un output format word.",
+          tags: ["NLP", , "Power plateform","Python", "Azure", "Excel Automation"],
           color: "blue",
           image: Go,
         },
         {
-          title: "Vision par Ordinateur",
+          title: "Computer Vision",
           description: "Système de détection d'infractions à la sécurité sur les chantiers via des modèles d’analyse d’image.",
           tags: ["Computer Vision", "PyTorch", "Azure", "Sécurité"],
           color: "cyan",
@@ -365,6 +380,7 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
           description: "Développement de chatbots intelligents pour répondre automatiquement aux collaborateurs via architectures RAG.",
           tags: ["RAG", "NLP", "Virtual Agent", "N8N"],
           color: "cyan",
+          image: DaxiumAss
 
         }
       ].map((item, i) => (
@@ -593,7 +609,7 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
             {[
               { icon: <PhoneCall size={24} />, href: "+33695476380" },
               { icon: <Mail size={24} />, href: "mailto:bouha.maaye@gmail.com" },
-              { icon: <Github size={24} />, href: "https://www.linkedin.com/in/bouha-maaye-6b378214b/" },
+              { icon: <Github size={24} />, href: "https://github.com/BouhaMaaye" },
               { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/bouha-maaye" }
             ].map((item, i) => (
               <motion.a
@@ -626,11 +642,27 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
 
 const projects = [
   {
+    title: "Optimisation des Tournées de Véhicules (SPIE)",
+    description: "Système d'optimisation intelligent développé chez SPIE utilisant OR-Tools et geopy pour planifier des itinéraires efficaces, réduire les coûts opérationnels et optimiser l'allocation des ressources de transport.",
+    tags: ["OR-Tools", "Geopy", "Optimisation", "Recherche Opérationnelle", "Python"],
+    link: "#",
+    images: [spie, Optim]
+
+  },
+  {
     title: "Stocky Pêche",
     description: "Plateforme premium pour les professionnels de la pêche en Mauritanie avec transactions sécurisées et analyse de marché.",
     tags: ["Flutter", "Node.js", "MongoDB", "IA"],
     link: "#",
     images: [Stocky, Stocky1, Stocky2]
+  },
+  {
+    title: "Détection de Plaques d'Immatriculation",
+    description: "Système de reconnaissance automatique de plaques d'immatriculation utilisant OpenCV et des techniques de computer vision pour la détection, extraction et lecture des matriculations de véhicules.",
+    tags: ["OpenCV", "Computer Vision", "OCR", "Détection d'objets", "Python"],
+    link: "#",
+    images: [opencv]
+
   },
   {
     title: "Chatbot Medease",
@@ -644,13 +676,15 @@ const projects = [
     title: "Détection de Fraude",
     description: "Système de classification automatique pour identifier les transactions bancaires frauduleuses.",
     tags: ["Machine Learning", "Anomaly Detection"],
-    link: "#"
+    link: "#",
+    images: [fraude1, fraude2]
   },
   {
     title: "Jeu Multijoueur",
     description: "Développement full-stack d'une application de jeu en temps réel avec Socket.IO.",
     tags: ["Vue.js", "Socket.IO", "Firebase"],
-    link: "#"
+    link: "#",
+    images: [mono]
   }
 ];
 
