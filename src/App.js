@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowRight, Download, PhoneCall } from "lucide-react";
 import { useRef, useState } from "react";
 import "./index.css";
@@ -20,6 +20,11 @@ import opencv from './assets/images/opencv.gif';
 import fraude1 from './assets/images/fraude1.jpg';
 import fraude2 from './assets/images/fraude2.png';
 import mono from './assets/images/mono.webp';
+import VisionIALOGO from './assets/images/VisionIALOGO.png';
+import AfcoERP from './assets/images/AFCO_ERP_home_page.png';
+import AfcoHome from './assets/images/Afco.png';
+import ONISPA from './assets/images/ONISPA.png';
+import AEMP from './assets/images/AEMP.png';
 
 
 
@@ -114,19 +119,19 @@ function App() {
           </motion.div>
           
           <div className="flex gap-6">
-            {["projects", "about", "experience"].map((tab) => (
+            {["projects", "about", "experience", "vision-ia"].map((tab) => (
               <motion.button
                 key={tab}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeTab === tab 
-                    ? "bg-blue-900/50 text-blue-300 border border-blue-700/50" 
+                  activeTab === tab
+                    ? "bg-blue-900/50 text-blue-300 border border-blue-700/50"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                {tab === "vision-ia" ? "VISION IA" : tab.charAt(0).toUpperCase() + tab.slice(1)}
               </motion.button>
             ))}
           </div>
@@ -198,22 +203,34 @@ function App() {
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-gray-300 mb-8"
+              className="text-xl md:text-2xl text-gray-300 mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="text-blue-400">Ingénieur Data science et IA</span> &{" "}
-              <span className="text-cyan-300">Développeur Full-Stack</span>
+              <span className="text-blue-400">Lead Tech & Directeur Technique</span>{" "}
+              <span className="text-gray-500">chez</span>{" "}
+              <span className="text-cyan-300">VIAKDATA</span>
             </motion.p>
-            
+
+            <motion.p
+              className="text-lg text-gray-400 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <span className="text-blue-300">Directeur Général</span>{" "}
+              <span className="text-gray-500">de</span>{" "}
+              <span className="text-cyan-300">VISION IA</span>
+            </motion.p>
+
             <motion.p
               className="text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Spécialiste en solutions IA innovantes et développement d'applications haut de gamme.
+              Entrepreneur et leader technique, je pilote des projets IA ambitieux et bâtis des solutions data à fort impact.
             </motion.p>
             
             <motion.div
@@ -267,19 +284,18 @@ function App() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-Titulaire d’un bac en mathématiques, d’une licence en mathématiques et informatique (parcours programmation), et d’un master en Data Science & IA, j’ai acquis une solide expertise technique.
+Titulaire d’un bac en mathématiques, d’une licence en mathématiques et informatique, et d’un master en Data Science & IA, j’ai bâti une expertise technique solide complétée par une première expérience en tant que data analyst chez Monoprix.
 
-Après un stage en tant que data analyst chez Monoprix, j’ai effectué deux années chez SPIE CityNetwork.
-J’y ai contribué à l’intégration des premières solutions IA du groupe, en développant des projets en Machine Learning, Deep Learning, analyse de données et automatisation.             </motion.p>
-              
-              <motion.p 
+J’ai ensuite passé deux années chez SPIE CityNetwork en tant que <strong className="text-blue-300">Responsable de la Transformation Digitale</strong>, où j’ai piloté l’intégration des premières solutions IA du groupe : Machine Learning, Deep Learning, Computer Vision, NLP et automatisation.             </motion.p>
+
+              <motion.p
                 className="text-gray-300 text-lg"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                Aujourd’hui, je combine une expertise technique approfondie avec une expérience terrain, et je suis prêt à contribuer activement à des projets ambitieux mêlant IA, données et transformation digitale.
+                Aujourd’hui, je dirige <strong className="text-blue-300">VIAKDATA</strong> en tant que Lead Tech & Directeur Technique, tout en assurant en parallèle la direction générale de <strong className="text-cyan-300">VISION IA</strong>. Mon quotidien : transformer des défis complexes en solutions IA concrètes et scalables.
               </motion.p>
               
               <motion.div
@@ -349,7 +365,7 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      Mon parcours chez SPIE
+      Expérience SPIE — Responsable Transformation Digitale
     </motion.h2>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -357,7 +373,7 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
         {
           title: "IA pour les Appels d'Offres (GO-NOGO",
           description: "Développement d’une IA analysant les documents d’appels d’offres et remplissant dynamiquement un output format word.",
-          tags: ["NLP", , "Power plateform","Python", "Azure", "Excel Automation"],
+          tags: ["NLP", "Power plateform", "Python", "Azure", "Excel Automation"],
           color: "blue",
           image: Go,
         },
@@ -433,6 +449,137 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
     </div>
   </div>
 </Section>
+
+      {/* VISION IA Section */}
+      <Section id="vision-ia" className="bg-black/40">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Header with logo */}
+          <motion.div
+            className="flex flex-col items-center mb-14"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <img src={VisionIALOGO} alt="VISION IA" className="h-16 mb-6 object-contain" />
+            <h2 className="text-3xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+              Réalisations VISION IA
+            </h2>
+            <p className="text-gray-400 mt-4 text-center max-w-2xl">
+              En tant que Directeur Général de VISION IA, j'ai piloté le développement de solutions digitales sur mesure pour des organisations publiques et privées.
+            </p>
+          </motion.div>
+
+          {/* Featured projects with images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {[
+              {
+                category: "ERP INDUSTRIEL",
+                title: "AFCO ERP",
+                description: "Système ERP industriel complet — centralisation totale des opérations, tableau de bord exécutif, gestion des stocks, comptabilité et automatisation des flux métiers.",
+                tags: ["ERP", "React", "Node.js", "PostgreSQL", "Automatisation"],
+                images: [AfcoHome, AfcoERP],
+                color: "blue"
+              },
+              {
+                category: "SYSTÈME INTÉGRÉ",
+                title: "ONISPA — Gestion Intégrée",
+                description: "Système de gestion intégré pour l'ONISPA incluant des dashboards analytiques, suivi opérationnel en temps réel et automatisation des processus administratifs.",
+                tags: ["Dashboard", "Power BI", "Python", "API REST", "Analytics"],
+                images: [ONISPA],
+                color: "cyan"
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="group relative"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
+                <div className="relative bg-gray-900/70 border border-gray-800 rounded-xl overflow-hidden hover:border-blue-400/30 transition-all duration-300">
+                  <div className="relative aspect-video overflow-hidden bg-gray-900 flex items-center justify-center">
+                    {item.images.length > 1 ? (
+                      <div className="flex flex-row gap-2 overflow-x-auto p-4 w-full h-full">
+                        {item.images.map((img, idx) => (
+                          <img key={idx} src={img} alt={`${item.title} ${idx + 1}`} className="h-full object-contain rounded-lg" />
+                        ))}
+                      </div>
+                    ) : (
+                      <img src={item.images[0]} alt={item.title} className="max-h-full max-w-full object-contain p-4" />
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <span className={`text-xs font-bold tracking-widest text-${item.color}-400 uppercase mb-2 block`}>{item.category}</span>
+                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-gray-400 text-sm mb-4">{item.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag, j) => (
+                        <span key={j} className={`px-3 py-1 bg-${item.color}-900/30 text-${item.color}-300 rounded-full text-xs border border-${item.color}-800/40`}>{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* AEMP full width */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="group relative mb-8"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
+            <div className="relative bg-gray-900/70 border border-gray-800 rounded-xl overflow-hidden hover:border-blue-400/30 transition-all duration-300 grid grid-cols-1 md:grid-cols-2">
+              <div className="relative overflow-hidden bg-gray-900 flex items-center justify-center min-h-[220px]">
+                <img src={AEMP} alt="AEMP" className="max-h-full max-w-full object-contain p-4" />
+              </div>
+              <div className="p-8 flex flex-col justify-center">
+                <span className="text-xs font-bold tracking-widest text-blue-400 uppercase mb-2">GESTION DE PROJET</span>
+                <h3 className="text-2xl font-bold text-white mb-3">AEMP — Suivi de Projet</h3>
+                <p className="text-gray-400 mb-5">Logiciel de suivi de projet développé pour l'AEMP : planification des tâches, suivi de l'avancement, reporting automatisé et gestion des équipes terrain.</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Gestion de projet", "React", "Node.js", "MongoDB", "Reporting"].map((tag, j) => (
+                    <span key={j} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-800/40">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Other VISION IA projects — cards without images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { category: "PLATEFORME IA", title: "Stocky Pêche", description: "Plateforme pour professionnels de la pêche en Mauritanie avec enchères live et analyse de marché.", tags: ["Flutter", "IA", "Node.js"], color: "cyan" },
+              { category: "SANTÉ & IA", title: "PharmaBot", description: "Assistant intelligent orientant les patients vers la pharmacie la plus proche avec suivi de disponibilité.", tags: ["NLP", "Maps API", "React Native"], color: "blue" },
+              { category: "SANTÉ CONNECTÉE", title: "Clinique Guérison", description: "Système de gestion de consultations médicales avec planification, dossiers patients et facturation.", tags: ["React", "PostgreSQL", "Node.js"], color: "cyan" },
+              { category: "FINTECH & IMMO", title: "Karne App", description: "Application mobile Fintech & Immobilier avec gestion de patrimoine, transactions et alertes promo.", tags: ["Flutter", "Firebase", "IA"], color: "blue" }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-gray-900/60 border border-gray-800 rounded-xl p-5 hover:border-blue-400/30 transition-all duration-300"
+              >
+                <span className={`text-xs font-bold tracking-widest text-${item.color}-400 uppercase mb-2 block`}>{item.category}</span>
+                <h4 className="text-base font-bold text-white mb-2">{item.title}</h4>
+                <p className="text-gray-500 text-xs mb-3">{item.description}</p>
+                <div className="flex flex-wrap gap-1">
+                  {item.tags.map((tag, j) => (
+                    <span key={j} className={`px-2 py-0.5 bg-${item.color}-900/30 text-${item.color}-300 rounded-full text-xs`}>{tag}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
 
       {/* Projects Section */}
       <Section id="projects" className="pb-32">
@@ -593,10 +740,10 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
             className="mb-8"
           >
             <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-              Travaillons ensemble
+              Me contacter
             </h3>
             <p className="text-gray-400 max-w-lg mx-auto">
-              Vous avez un projet innovant ou souhaitez discuter d'opportunités ? Contactez-moi !
+              N'hésitez pas à me contacter pour échanger, collaborer ou en savoir plus sur mes projets.
             </p>
           </motion.div>
           
@@ -607,10 +754,10 @@ J’y ai contribué à l’intégration des premières solutions IA du groupe, e
             className="flex justify-center gap-6 mb-8"
           >
             {[
-              { icon: <PhoneCall size={24} />, href: "+33695476380" },
-              { icon: <Mail size={24} />, href: "mailto:bouha.maaye@gmail.com" },
+              { icon: <PhoneCall size={24} />, href: "https://wa.me/33695476380" },
+              { icon: <Mail size={24} />, href: "mailto:bouha.mohamedlemine@gmail.com" },
               { icon: <Github size={24} />, href: "https://github.com/BouhaMaaye" },
-              { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/bouha-maaye" }
+              { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/bouha-maaye-6b378214b/" }
             ].map((item, i) => (
               <motion.a
                 key={i}
